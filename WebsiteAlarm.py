@@ -1,3 +1,11 @@
+# Author - Shivam Sharma 
+
+# We use Bookmarks to remember the important websites which we think we will use them very often in future.
+# Here’s a simple python code which takes the URL of the website as its first input and the time you want to open it as the second input.
+
+# As the time reaches your given value of the time, it’ll open the URL that you requested in the web browser automatically.
+# In this code, we’ll import two python modules – Time and Webbrowser.
+
 # Import the time module, it provides various time-related
 # functions.
 import time
@@ -14,7 +22,12 @@ Set_Alarm = raw_input("Set the website alarm as H:M:S:")
 # Second Input: It is the URL that you want
 # to open on the given time.
 url = raw_input("Enter the website you want to open:")
- 
+
+# check if the url has http
+condition = "http" or "https" not in url 
+
+if condition == True:
+	url = "http://" + url
 # This is the actual time that we will use to print.
 Actual_Time = time.strftime("%I:%M:%S")
  
@@ -33,4 +46,4 @@ if (Actual_Time == Set_Alarm):
  
     # We are calling the open()
     # function from the webrowser module.
-    webbrowser.open(url)
+webbrowser.open(url)
